@@ -1,0 +1,40 @@
+# 3D コントリビューショングラフを毎日自動生成する workflow
+# 配置先: リポジトリ内の  .github/workflows/profile-3d.yml
+name: GitHub-Profile-3D-Contrib
+
+on:
+  # 毎日 UTC 18:30（日本時間 翌 03:30）に実行
+  schedule:
+    - cron: "30 18 * * *"
+  # 手動実行も可能（Actions タブの "Run workflow" ボタン）
+  workflow_dispatch:
+  # main への push 時にも更新
+  push:
+    branches:
+      - main
+
+# 生成した SVG をリポジトリにコミットするための書き込み権限
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          # Private 活動も草に含めるため、Contents:Read-only の Fine-grained PAT を
+          # Secret(PROFILE_3D_TOKEN) に登録して使用する（草データの取得用）。
+          GITHUB_TOKEN: ${{ secrets.PROFILE_3D_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+
+      - name: Commit & Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A .
+          git commit -m "chore: update 3D contribution graph" || echo "No changes to commit"
+          # push は自分のリポジトリへの書き込みのみなので自動発行の GITHUB_TOKEN で十分
+          git push
