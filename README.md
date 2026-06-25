@@ -77,12 +77,14 @@ const riki = {
 
 ---
 
-<!-- =================== トロフィー =================== -->
-## 🏆 Trophies
+<!-- =================== アチーブメント =================== -->
+## 🏆 Achievements
 
 <div align="center">
 
-[![trophy](https://github-profile-trophy.vercel.app/?username=RikiFukushima&theme=radical&no-frame=true&no-bg=true&margin-w=4&column=7)](https://github.com/ryo-ma/github-profile-trophy)
+![Pull Shark](https://img.shields.io/badge/Pull%20Shark%20x2-1F6FEB?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117)
+![Pair Extraordinaire](https://img.shields.io/badge/Pair%20Extraordinaire%20x2-7B2FFF?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117)
+![YOLO](https://img.shields.io/badge/YOLO-00F7FF?style=for-the-badge&logo=github&logoColor=black&labelColor=0d1117)
 
 </div>
 
@@ -94,6 +96,18 @@ const riki = {
 <div align="center">
 
 [![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=RikiFukushima&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=00F7FF&line=7B2FFF&point=ffffff)](https://github.com/ashutosh00710/github-readme-activity-graph)
+
+</div>
+
+---
+
+<!-- =================== 3D コントリビューション（草を立体表示） =================== -->
+<!-- ↓ 画像は GitHub Actions（.github/workflows/profile-3d.yml）が毎日自動生成します -->
+## 🌌 3D Contribution
+
+<div align="center">
+
+<img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D contribution graph"/>
 
 </div>
 
